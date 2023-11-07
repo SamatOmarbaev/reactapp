@@ -1,5 +1,6 @@
 import React from "react";
 import TaskItem from "../TaskItem/TaskItem";
+import './style.css';
 
 const TaskList = ({ tasks, deleteTask }) => {
     return (

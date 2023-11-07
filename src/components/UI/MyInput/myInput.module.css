@@ -8,5 +8,5 @@
     padding: .75rem;
 }
 .myInput:focus {
-    outline: 1px solid var(--colors-text);
+    border: 2px solid var(--colors-text);
 }
