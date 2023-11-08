@@ -1,0 +1,32 @@
+.navigation {
+    background-color: var(--modal-bg);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+}
+.navigation__logo {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--colors-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navigation__list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.navigation__link {
+    font-size: 1.125rem;
+    color: var(--colors-text);
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.navigation__link:hover,
+.navigation__link.active {
+    color: var(--color-primary);
+}
