@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    border: 1px solid var(--color-primary);
+    border: 1px solid var(--colors-text);
     border-radius: .375rem;
     padding: 1rem;
 }

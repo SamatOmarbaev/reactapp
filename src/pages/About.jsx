@@ -4,7 +4,7 @@ import Title from "../components/Title/Title";
 const About = () => {
     return (
         <div className="container">
-            <Title children={'Приложение создано в рамках учебного курса по основам Frontend технологий.'} />
+            <Title children={'Приложение создано в рамках учебного курса по основам Frontend технологий'} />
         </div>
     );
 }

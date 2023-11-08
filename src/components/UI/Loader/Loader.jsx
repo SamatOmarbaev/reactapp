@@ -4,7 +4,7 @@ import './style.css';
 const Loader = () => {
     return (
         <div className="loader">
-            <div class="lds-hourglass"></div>
+            <div className="lds-hourglass"></div>
         </div>
     );
 }
