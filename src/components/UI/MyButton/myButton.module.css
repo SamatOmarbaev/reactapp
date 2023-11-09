@@ -16,3 +16,9 @@
 .myButton:hover {
     background-color: transparent;
 }
+
+@media (max-width: 480px) {
+    .myButton {
+        font-size: .75rem;
+    }
+}

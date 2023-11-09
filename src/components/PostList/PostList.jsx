@@ -2,6 +2,7 @@ import React from "react";
 import './style.css';
 import PostItem from "../PostItem/PostItem";
 import Title from "../Title/Title";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const PostList = ({posts}) => {
 
@@ -10,13 +11,17 @@ const PostList = ({posts}) => {
     }
 
     return (
-        <>
-            <div className="post__list">
-                {posts.map((post =>
-                    <PostItem post={post} key={post.id} />
-                ))}
-            </div>
-        </>
+        <TransitionGroup className="post__list">
+            {posts.map((post =>
+            <CSSTransition
+                key={post.id}
+                timeout={500}
+                classNames='post'
+            >
+                <PostItem post={post} />
+            </CSSTransition>
+            ))}
+        </TransitionGroup>
     );
 }
  

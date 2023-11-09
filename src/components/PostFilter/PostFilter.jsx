@@ -1,10 +1,11 @@
 import React from "react";
 import MyInput from "../UI/MyInput/MyInput";
 import MySelect from '../UI/MySelect/MySelect';
+import './style.css';
 
 const PostFilter = ({filter, setFilter}) => {
     return (
-        <div>
+        <div className="post__filter">
             <MyInput 
                 placeholder="Поиск..."
                 value={filter.query}

@@ -1,44 +1,35 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import PostList from "../components/PostList/PostList";
 import { PostService } from "../API/postService";
 import Title from "../components/Title/Title";
 import Loader from '../components/UI/Loader/Loader';
 import PostFilter from "../components/PostFilter/PostFilter";
+import { usePosts } from "../hooks/usePosts";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
     const [filter, setFilter] = useState({sort: '', query: ''});
+    const [isLoading, setIsLoading] = useState(false);
+    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
     const getPosts = async () => {
+        setIsLoading(true);
         const response = await PostService.getAll()
         setPosts(response.data);
+        setIsLoading(false);
     };
 
     useEffect(() => {
         getPosts();
     }, []);
 
-    const sortedPosts = useMemo(() => {
-        if (filter.sort) {
-            return [...posts].sort((a, b) => a[filter.sort].localeCompare(b[filter.sort]));
-        }
-
-        return posts;
-    }, [filter.sort, posts]);
-
-    const sortedAndSearchedPosts = useMemo(() => {
-        return sortedPosts.filter(post => post.title.toLowerCase().includes(filter.query.toLowerCase()));
-    }, [filter.query, sortedPosts]);
-
     return (
         <div className="container">
-            {posts.length > 0
-                ?   <>
-                        <Title children={'Список постов'} />
-                        <PostFilter filter={filter} setFilter={setFilter} />
-                        <PostList posts={sortedAndSearchedPosts} />
-                    </>
-                :   <Loader />
+            <Title children={'Список постов'} />
+            <PostFilter filter={filter} setFilter={setFilter} />
+            {isLoading
+                ?   <Loader />
+                :   <PostList posts={sortedAndSearchedPosts} />
             }
             
         </div>
