@@ -1,6 +1,6 @@
 import React from "react";
-import MySelect from "../UI/MySelect/MySelect";
 import MyInput from "../UI/MyInput/MyInput";
+import MySelect from '../UI/MySelect/MySelect';
 
 const PostFilter = ({filter, setFilter}) => {
     return (
@@ -11,9 +11,9 @@ const PostFilter = ({filter, setFilter}) => {
                 onChange={(e) => setFilter({...filter, query: e.target.value})}
             />
             <MySelect 
-                defaultValue='Сортировка'
                 value={filter.sort}
                 onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
+                defaultValue={'Сортировка'}
                 options={[
                     {value: 'title', name: 'По названию'},
                     {value: 'body', name: 'По описанию'},

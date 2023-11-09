@@ -5,3 +5,14 @@
     font-weight: 900;
     margin: 2rem 0;
 }
+/* media */
+@media (max-width: 620px) {
+    .title {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+}
