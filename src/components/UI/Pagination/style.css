@@ -1,0 +1,16 @@
+.pages {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.page {
+    border: 1px solid var(--color-primary);
+    border-radius: .375rem;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.page__current {
+    border: 2px solid var(--colors-text);
+    background-color: var(--color-primary);
+}
