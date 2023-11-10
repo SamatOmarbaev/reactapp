@@ -29,3 +29,17 @@ input:checked + div {
     text-decoration: line-through;
     color: var(--color-primary);
 }
+
+@media (max-width: 620px) {
+    .task__item {
+        padding: 0.75rem;
+    }
+    .task__item__info {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    .task__item__info {
+        font-size: .85rem;
+    }
+}

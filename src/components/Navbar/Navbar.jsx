@@ -22,7 +22,9 @@ const Navbar = () => {
                     <NavLink to='/tasks' className="navigation__link">Задачи</NavLink>
                     <NavLink to='/posts' className="navigation__link">Посты</NavLink>
                     <NavLink to='/about' className="navigation__link">Информация</NavLink>
-                    <MyButton onClick={logout}>Выйти</MyButton>
+                    <div>
+                        <MyButton onClick={logout}>Выйти</MyButton>
+                    </div>
                 </ul>
             }
         </nav>
