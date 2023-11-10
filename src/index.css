@@ -43,3 +43,57 @@ body {
     margin: 0 auto;
 }
 
+/* postIdPage */
+.post__page__title {
+    margin: 2rem 0;
+}
+.post__page__info {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    border-left: 4px solid var(--colors-text);
+    padding: 2rem;
+}
+.post__page__id {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.post__page__comments {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.page__comment {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    border-right:4px solid var(--color-primary);
+    padding-right: 1rem;
+}
+.page__comment__title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+}
+.page__comment__title a {
+    color: var(--colors-text);
+}
+.page__comment__title:hover a {
+    color: var(--color-primary);
+}
+
+/* login__form */
+.login__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+}
