@@ -19,9 +19,11 @@ const Navbar = () => {
                 <RiReactjsFill />
             </NavLink>
             {isAuth && <ul className="navigation__list">
-                    <NavLink to='/tasks' className="navigation__link">Задачи</NavLink>
-                    <NavLink to='/posts' className="navigation__link">Посты</NavLink>
-                    <NavLink to='/about' className="navigation__link">Информация</NavLink>
+                    <div className="navigation__links">
+                        <NavLink to='/tasks' className="navigation__link">Задачи</NavLink>
+                        <NavLink to='/posts' className="navigation__link">Посты</NavLink>
+                        <NavLink to='/about' className="navigation__link">Информация</NavLink>
+                    </div>
                     <div>
                         <MyButton onClick={logout}>Выйти</MyButton>
                     </div>

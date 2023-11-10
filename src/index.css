@@ -59,7 +59,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-direction: row-reverse;
+    gap: 1rem;
 }
 
 .post__page__comments {
@@ -88,6 +88,34 @@ body {
 }
 .page__comment__title:hover a {
     color: var(--color-primary);
+}
+@media (max-width: 620px) {
+    .post__page__title {
+        font-size: 1.25rem;
+    }
+    .post__page__info {
+        padding: 1.5rem;
+    }
+    .page__comment__title {
+        font-size: .9rem;
+    }
+    .page__comment__body {
+        font-size: .85rem;
+    }
+}
+@media (max-width: 480px) {
+    .post__page__title {
+        font-size: 1rem;
+    }
+    .post__page__info {
+        padding: 1rem;
+    }
+    .post__page__info h3 {
+        font-size: 1rem;
+    }
+    .post__page__info p {
+        font-size: .85rem;
+    }
 }
 
 /* login__form */

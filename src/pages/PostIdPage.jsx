@@ -27,12 +27,12 @@ const PostIdPage = () => {
     return (
         <div className="container">
             <div className="post__page__id">
-                <h1 className="post__page__title">
-                    Страница поста с id = {params.id}
-                </h1>
                 <MyButton onClick={() => navigate('/posts')} >
                     Назад
                 </MyButton>
+                <h1 className="post__page__title">
+                    Страница поста с id = {params.id}
+                </h1>
             </div>
             {isLoading
                 ?   <Loader />
