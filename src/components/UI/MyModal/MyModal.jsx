@@ -1,20 +1,32 @@
 import React from "react";
-import styles from './myModal.module.css';
+import { useDispatch, useSelector } from "react-redux";
 
-const MyModal = ({children, visible, setVisible}) => {
-    const rootClasses = [styles.myModal];
+import { closeModal } from "../../../store/tasks/modalReducer";
 
-    if (visible) {
-        rootClasses.push(styles.active);
-    }
+import styles from "./myModal.module.css";
 
-    return (
-        <div className={rootClasses.join(' ')} onClick={() => setVisible(false)}>
-            <div className={styles.myModalContent} onClick={(e) => e.stopPropagation()}>
-                {children}
-            </div>
-        </div>
-    );
-}
- 
+const MyModal = ({ children }) => {
+  const dispatch = useDispatch();
+  const isOpen = useSelector((state) => state.tasks.modal.isOpen);
+  const rootClasses = [styles.myModal];
+
+  if (isOpen) {
+    rootClasses.push(styles.active);
+  }
+
+  return (
+    <div
+      className={rootClasses.join(" ")}
+      onClick={() => dispatch(closeModal(false))}
+    >
+      <div
+        className={styles.myModalContent}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+
 export default MyModal;
