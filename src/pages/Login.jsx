@@ -1,35 +1,29 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
+
 import MyInput from "../components/UI/MyInput/MyInput";
 import MyButton from "../components/UI/MyButton/MyButton";
 import Title from "../components/Title/Title";
-import { AuthContext } from "../context";
+import { authLogin } from "../store/auth/authReducer";
 
 const Login = () => {
-  // const {isAuth, setIsAuth} = useContext(AuthContext);
+  const dispatch = useDispatch();
 
-  // const submit = (e) => {
-  //     e.preventDefault();
-  //     setIsAuth(true);
-  //     localStorage.setItem('auth', 'true');
-  // };
+  const submit = (e) => {
+    e.preventDefault();
+    dispatch(authLogin(true));
+    localStorage.setItem("auth", "true");
+  };
 
   return (
     <div>
       <Title>Страница для логина</Title>
-      <form className="login__form">
+      <form onSubmit={submit} className="login__form">
         <MyInput type="text" placeholder="Введите логин" />
         <MyInput type="password" placeholder="Введите пароль" />
         <MyButton>Войти</MyButton>
       </form>
     </div>
-    // <div>
-    //     <Title>Страница для логина</Title>
-    //     <form onSubmit={submit} className="login__form">
-    //         <MyInput type="text" placeholder="Введите логин" />
-    //         <MyInput type="password" placeholder="Введите пароль" />
-    //         <MyButton>Войти</MyButton>
-    //     </form>
-    // </div>
   );
 };
 

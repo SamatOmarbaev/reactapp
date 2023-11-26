@@ -20,6 +20,7 @@ const TaskItem = ({ task, number }) => {
         <input
           type="checkbox"
           checked={isChecked}
+          onChange={(e) => setIsChecked(e.target.value)}
           className="task__item__checkbox"
         />
         <div className="task__text">
